@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master-head-left-foot.master.cs"
+    Inherits="Master_head_left_foot" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function sizeshow() {
+            var clientheight = document.documentElement.clientHeight;
+            var clientwidth = document.documentElement.clientWidth;
+          
+
+            var setheight = parseInt(clientheight - 60 - 40 - 2);
+            var setwidth = parseInt(clientwidth - 130 - 170 - 7);
+
+            document.getElementById("content1").style.height = setheight + 'px';
+            document.getElementById("contentmid").style.height = setheight + 'px';
+            document.getElementById("content2").style.height = setheight + 'px';
+
+            
+            document.getElementById("contentmid").style.width = setwidth + 'px';
+           
+
+            return true;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload=" return sizeshow();" onresize="return sizeshow();">
+    <form id="form1" runat="server">
+    <%--Header--%>
+    <div id="head">
+        <div style="float: left; font-size: 25px; color: #ffffff; width: 200px; height: 40px;
+            padding-left: 9px; padding-top: 20px;">
+            Exams4U
+        </div>
+        <div style="float: right; color: #FFFFFF; font-size: 15px; width: 200px; height: 60px;
+            text-align: right;">
+            <div style="clear: both; width: 191px; height: 22px; padding: 8px 9px 0 0;">
+                Hello,&nbsp;<asp:Label ID="Label1" runat="server" Text=""></asp:Label></div>
+            <div style="clear: both; width: 191px; height: 25px; padding: 5px 9px 0 0;">
+                <a href="Signin.aspx" class="logouts">logout</a></div>
+        </div>
+    </div>
+    <%--header-close--%>
+    <%--content1--%>
+    <div id="content1">
+        <br />
+        <div class="left_tag">
+            <a href="Home.aspx">Home</a></div>
+        <br />
+        <div class="left_tag">
+            <a href="Feedback.aspx">Feedback</a></div>
+        <br />
+        <div class="left_tag">
+            <a href="Aboutus.aspx">About Us</a></div>
+        <br />
+        <div class="left_tag">
+            <a href="Help.aspx">Help</a></div>
+        <br />
+        <div class="left_tag">
+            <a href="Reports.aspx">Reports</a></div>
+        <br />
+    </div>
+    <%--content-mid--%>
+    <div id="contentmid">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <%--content- 2--%>
+    <div id="content2">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <%--footer--%>
+    <div id="footer">
+        <div style="clear: both; float: left; width: 330px; height: 30px; margin: 10px 0 0 30px;
+            font-size: 14px;">
+            <div style="float: left; width: 100px; height: 30px;">
+                <a href="Aboutus.aspx">About Us</a>
+            </div>
+            <div style="float: left; width: 100px; height: 30px;">
+                <a href="Feedback.aspx">Feedback</a>
+            </div>
+            <div style="float: left; width: 100px; height: 30px;">
+                <a href="Help.aspx">Help</a>
+            </div>
+        </div>
+        <div style="float: right; width: 200px; height: 30px; margin: 5px 14px 0 0px; text-align: right;">
+            <asp:Label ID="lbldate" runat="server" Text=""></asp:Label>&nbsp;&nbsp;<div style="font-weight: bold;
+                margin: 2px 0 0 0;">
+                Kush Productions</div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
